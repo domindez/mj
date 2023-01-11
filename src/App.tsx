@@ -1,26 +1,23 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Contact from './components/Contact';
+import Doctoralia from './components/Doctoralia';
+import Experiene from './components/Experience';
+import Footer from './components/Footer';
+import Header from './components/Header';
+import Main from './components/Main';
+import Services from './components/Services';
+import './sass/App.scss';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  return <div className='App'>
+    <Header />
+    <Main />
+    <Doctoralia />  
+    <Services />
+    <Experiene />
+    <Contact />
+    <Footer />
+  </div>;
 }
 
 export default App;

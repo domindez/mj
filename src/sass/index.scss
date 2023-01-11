@@ -1,0 +1,50 @@
+@use 'variables';
+@use 'mixins';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 18px;
+  font-family: 'Sofia Sans', sans-serif;
+}
+
+h2 {
+  text-align: center;
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  color: variables.$mainTextColor;
+}
+
+h3 {
+  text-align: center;
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  color: variables.$secondaryTextColor;
+}
+
+section{
+  @include mixins.centrate();
+}
+
+footer{
+  padding: 10px;
+  font-size: 0.9em;
+  line-height: 30px;
+  text-align: center;
+  background-color: rgb(41, 41, 41);
+  color: white;
+
+  a{
+    text-decoration: none;
+    font-size: 0.9em;
+    color: rgb(255, 255, 255);
+  }
+
+}
+
+strong {
+  font-weight: inherit; 
+  font-size: inherit;
+  color: inherit; 
+}
