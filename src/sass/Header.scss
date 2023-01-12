@@ -31,6 +31,7 @@
     height: 30px;
     width: 30px;
     color: #0077b5;
+    transition: 0.5s;
 
   &:hover {
     transform: scale(1.1);
@@ -42,6 +43,8 @@
     height: 30px;
     width: 30px;
     color: #25D366;
+    transition: 0.5s;
+
 
   &:hover {
     transform: scale(1.1);

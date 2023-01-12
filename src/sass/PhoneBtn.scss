@@ -17,10 +17,10 @@
     text-decoration: none;
     color: white;
     margin-top: auto;
+    transition: 0.5s;
     
     &:hover {
-      transform: scale(1.03);
-    
+      transform: scale(1.03);    
     }
     
     .icon {
