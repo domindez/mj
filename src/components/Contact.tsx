@@ -11,7 +11,7 @@ const Contact = () => {
       <div className='contact__grid'>
         <div>
           <img
-            src={require('../img/maria-contreras-psicologa-contacto.jpg')}
+            src={require('../img/maria-contreras-psicologa-contact-2.webp')}
             alt='maria contreras psicologa'
           />
         </div>

@@ -23,7 +23,7 @@ const Main = () => {
 
       </div>
       <div className="right">
-        <img src={require('../img/maria-contreras-psicologa.jpg')} />
+        <img src={require('../img/maria-contreras-psicologa.webp')} />
       </div>
     </section>
   );
