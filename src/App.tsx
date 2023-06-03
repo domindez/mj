@@ -7,6 +7,7 @@ import Header from './components/Header';
 import Main from './components/Main';
 import Services from './components/Services';
 import './sass/App.scss';
+import Facebook from './components/Facebook';
 
 function App() {
   return <div className='App'>
@@ -15,6 +16,7 @@ function App() {
     <Doctoralia />  
     <Services />
     <Experiene />
+    <Facebook />
     <Contact />
     <Footer />
   </div>;
