@@ -6,7 +6,7 @@ const Footer = () => {
     <footer>
         mariacontreraspsicologa.com
       <br />
-        2023 · web by <a href="https://trivify.es/">trivify.es</a>
+        2025 · web by <a href="https://trivify.es/">trivify.es</a>
     </footer>
   );
 };
