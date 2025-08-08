@@ -1,0 +1,29 @@
+---
+const { class: cls = '' } = Astro.props
+---
+
+<section id='doctoralia' class={`py-16 md:py-24 flex flex-col items-center px-6 ${cls}`}>
+	<h2 class='font-display tracking-tight text-3xl md:text-4xl font-semibold leading-snug text-center'>
+		Opiniones de pacientes
+	</h2>
+	<p class='mt-4 mb-6 max-w-2xl text-center text-lg text-inkSoft leading-relaxed'>
+		Transparencia y confianza: puedes consultar mi perfil y opiniones verificadas en Doctoralia.
+	</p>
+	<div id='doctoralia-container' class='mb-6 w-full flex justify-center'></div>
+	<a
+		class='inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-medium bg-white text-inkSoft border border-line hover:text-ink hover:shadow transition focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2'
+		href='https://www.doctoralia.es/anade-opinion/ma-angeles-contreras-penalver#/opinion'
+		target='_blank'
+		rel='noopener'>Dejar una opinión</a
+	>
+</section>
+<script is:inline>
+	const html =
+		'<a id="zl-url" class="zl-url" href="https://www.doctoralia.es/ma-angeles-contreras-penalver/psicologo/malaga" rel="nofollow" data-zlw-doctor="ma-angeles-contreras-penalver" data-zlw-type="big" data-zlw-opinion="true" data-zlw-hide-branding="true">Mª Ángeles Contreras Peñalver - Doctoralia.es</a>'
+	const host = document.getElementById('doctoralia-container')
+	if (host) host.innerHTML = html
+	const s = document.createElement('script')
+	s.src = '//platform.docplanner.com/js/widget.js'
+	s.async = true
+	document.body.appendChild(s)
+</script>

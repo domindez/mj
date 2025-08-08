@@ -1,0 +1,42 @@
+---
+import { Phone, Mail, MessageCircle } from 'lucide-react'
+const { class: cls = '' } = Astro.props
+---
+
+<section id='contacto' class={`py-16 md:py-24 ${cls}`}>
+	<div class='max-w-5xl mx-auto grid md:grid-cols-3 gap-10 items-center px-6'>
+		<div class='flex flex-col items-center md:items-start gap-4'>
+			<h2 class='font-display tracking-tight text-3xl md:text-4xl font-semibold leading-snug w-full text-left'>
+				Reserva tu cita
+			</h2>
+			<p class='text-lg text-inkSoft leading-relaxed'>
+				Puedes contactar conmigo por WhatsApp, llamada o correo. Te responderé lo antes posible para acordar día y
+				modalidad de la sesión.
+			</p>
+			<div class='flex gap-3 mt-2'>
+				<a
+					href='tel:+34689603837'
+					class='inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-medium bg-accent text-white hover:bg-teal-600 transition shadow-sm focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2'
+					><Phone className='h-5 w-5' /> Llamar</a
+				>
+				<a
+					href='https://api.whatsapp.com/send?phone=34689603837&text=Hola,%20me%20gustar%C3%ADa%20consultar%20disponibilidad%20para%20una%20cita.'
+					class='inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-medium bg-white text-inkSoft border border-line hover:text-ink hover:shadow transition focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2'
+					target='_blank'
+					rel='noopener'><MessageCircle className='h-5 w-5' /> WhatsApp</a
+				>
+			</div>
+			<div class='mt-4 flex items-center gap-2 text-inkSoft/80'>
+				<Mail className='h-5 w-5' /> info@mariacontreraspsicologa.com
+			</div>
+		</div>
+		<div class='md:col-span-2 flex justify-center'>
+			<img
+				class='w-64 md:w-72 rounded-full ring-4 ring-white shadow-lg'
+				src='/img/maria-contreras-psicologa-contact-2.webp'
+				alt='maria contreras psicologa'
+				loading='lazy'
+			/>
+		</div>
+	</div>
+</section>

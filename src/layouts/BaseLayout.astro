@@ -1,0 +1,53 @@
+---
+import '../styles.css'
+interface Props {
+	title?: string
+}
+const { title = 'Psicóloga sanitaria - M. Ángeles Contreras' } = Astro.props
+---
+
+<html lang='es'>
+	<head>
+		<meta charset='utf-8' />
+		<meta name='viewport' content='width=device-width' />
+		<title>{title}</title>
+		<meta
+			name='description'
+			content='Psicóloga sanitaria en Málaga. Terapia sistémica, online y presencial: adultos, parejas, niños y espacio seguro LGTBIQ+.'
+		/>
+		<link rel='preconnect' href='https://fonts.googleapis.com' />
+		<link rel='preconnect' href='https://fonts.gstatic.com' crossorigin />
+		<link
+			href='https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Crimson+Text:wght@400;600&family=Dancing+Script:wght@400;500;600;700&display=swap'
+			rel='stylesheet'
+		/>
+		<link rel='icon' type='image/png' href='/favicon.ico' />
+	</head>
+	<body class='min-h-screen flex flex-col'>
+		<main class='flex-1'>
+			<slot />
+		</main>
+		<footer class='mt-24 border-t border-line/70 bg-baseAlt/60 backdrop-blur'>
+			<div
+				class='max-w-6xl mx-auto px-6 py-10 flex flex-col md:flex-row gap-8 md:gap-4 items-start md:items-center justify-between text-sm text-inkSoft'
+			>
+				<div>
+					<strong class='font-display text-lg text-ink'>Mª Ángeles Contreras</strong>
+					<p class='mt-1'>Psicóloga sanitaria · Málaga & Online</p>
+				</div>
+				<nav class='flex flex-wrap gap-5 text-xs'>
+					<a href='#servicios' class='hover:text-ink'>Servicios</a>
+					<a href='#experiencia' class='hover:text-ink'>Experiencia</a>
+					<a href='#doctoralia' class='hover:text-ink'>Opiniones</a>
+					<a href='#contacto' class='hover:text-ink'>Contacto</a>
+				</nav>
+				<p class='text-xs opacity-80'>
+					© {new Date().getFullYear()} mariacontreraspsicologa.com · web by <a
+						class='underline hover:text-ink'
+						href='https://domindez.com/'>domindez.com</a
+					>
+				</p>
+			</div>
+		</footer>
+	</body>
+</html>

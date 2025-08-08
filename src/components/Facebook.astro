@@ -1,0 +1,25 @@
+---
+const { class: cls = '' } = Astro.props
+---
+
+<section class={`py-16 md:py-24 flex flex-col items-center px-6 ${cls}`}>
+	<h2 class='font-display tracking-tight text-3xl md:text-4xl font-semibold leading-snug text-center'>
+		Talleres y eventos
+	</h2>
+	<p class='mt-4 mb-6 max-w-2xl text-center text-lg text-inkSoft leading-relaxed'>
+		Divulgación y espacios formativos para el crecimiento personal y la psicoeducación.
+	</p>
+	<div class='p-4 w-full max-w-xl rounded-xl bg-white/70 backdrop-blur border border-line shadow-card'>
+		<iframe
+			class='block mx-auto rounded-md w-full'
+			src='https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2FPabloRuedaIES%2Fposts%2Fpfbid0aTprTpJgh71qWK3i8Pr5tkgCpkEaC2RNYNA83tESLdRTxYjqZQ6JDzcwq2rM7Rcql&show_text=true&width=500'
+			width='100%'
+			height='767'
+			style='border:none;overflow:hidden'
+			scrolling='no'
+			frameborder='0'
+			allow='autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share'
+		>
+		</iframe>
+	</div>
+</section>

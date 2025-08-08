@@ -1,0 +1,93 @@
+---
+import { ChevronDown } from 'lucide-react'
+const { class: cls = '' } = Astro.props
+
+const faqs = [
+	{
+		question: '¿Cuánto dura una sesión?',
+		answer:
+			'Las sesiones tienen una duración aproximada de 50-60 minutos. El tiempo puede variar ligeramente según las necesidades específicas de cada caso.'
+	},
+	{
+		question: '¿Con qué frecuencia debo asistir?',
+		answer:
+			'Generalmente recomiendo sesiones semanales o quincenales al inicio. La frecuencia se adapta a tu disponibilidad, necesidades y evolución del proceso terapéutico.'
+	},
+	{
+		question: '¿Cuándo podré ver resultados?',
+		answer:
+			'Cada proceso es único. Algunas personas notan cambios desde las primeras sesiones, mientras que otros procesos requieren más tiempo. Lo importante es el compromiso mutuo con el proceso.'
+	},
+	{
+		question: '¿Atiendes casos de urgencia?',
+		answer:
+			'Para situaciones de crisis, recomiendo contactar con servicios de urgencias (112) o el teléfono de la esperanza (717 003 717). En otros casos urgentes, puedes contactarme por WhatsApp.'
+	},
+	{
+		question: '¿Las sesiones online son igual de efectivas?',
+		answer:
+			'Sí, la terapia online ha demostrado ser igual de efectiva que la presencial. Ofrezco ambas modalidades para adaptarme a tus preferencias y circunstancias.'
+	},
+	{
+		question: '¿Trabajas con adolescentes?',
+		answer:
+			'Sí, trabajo con adolescentes a partir de los 12 años. En estos casos, suelo incluir a la familia en parte del proceso para obtener mejores resultados.'
+	}
+]
+---
+
+<section id='preguntas' class={`py-16 md:py-24 ${cls}`}>
+	<div class='max-w-4xl mx-auto px-6'>
+		<div class='text-center mb-16'>
+			<h2 class='font-display tracking-tight text-3xl md:text-4xl font-semibold leading-snug text-ink'>
+				Preguntas frecuentes
+			</h2>
+			<p class='mt-4 text-lg text-inkSoft leading-relaxed'>
+				Resuelvo las dudas más comunes sobre el proceso terapéutico
+			</p>
+		</div>
+
+		<div class='space-y-4'>
+			{
+				faqs.map((faq, index) => (
+					<div class='bg-white rounded-xl border border-line/30 shadow-sm overflow-hidden'>
+						<button
+							class='faq-button w-full px-6 py-5 text-left flex items-center justify-between hover:bg-baseAlt/30 transition-colors'
+							data-faq={index}
+						>
+							<span class='font-medium text-ink pr-4'>{faq.question}</span>
+							<ChevronDown className='h-5 w-5 text-inkSoft transform transition-transform faq-icon' />
+						</button>
+						<div class='faq-content hidden px-6 pb-5'>
+							<p class='text-inkSoft leading-relaxed'>{faq.answer}</p>
+						</div>
+					</div>
+				))
+			}
+		</div>
+	</div>
+</section>
+
+<script is:inline>
+	document.addEventListener('DOMContentLoaded', () => {
+		const faqButtons = document.querySelectorAll('.faq-button')
+
+		faqButtons.forEach((button) => {
+			button.addEventListener('click', () => {
+				const content = button.nextElementSibling
+				const icon = button.querySelector('.faq-icon')
+				const isOpen = !content.classList.contains('hidden')
+
+				// Close all FAQs
+				document.querySelectorAll('.faq-content').forEach((c) => c.classList.add('hidden'))
+				document.querySelectorAll('.faq-icon').forEach((i) => i.classList.remove('rotate-180'))
+
+				// Open clicked FAQ if it was closed
+				if (!isOpen) {
+					content.classList.remove('hidden')
+					icon.classList.add('rotate-180')
+				}
+			})
+		})
+	})
+</script>

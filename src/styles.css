@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global mínimos: resto se hace con utilidades Tailwind en componentes */
+html {
+  scroll-behavior: smooth;
+}
+body {
+  @apply font-sans bg-base text-ink antialiased;
+}
+
+/* Animaciones de aparición (IntersectionObserver en index) */
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}

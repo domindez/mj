@@ -1,0 +1,40 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import Header from '../components/Header.astro'
+import Hero from '../components/Hero.astro'
+import Services from '../components/Services.astro'
+import About from '../components/About.astro'
+import Approach from '../components/Approach.astro'
+import Experience from '../components/Experience.astro'
+import FAQ from '../components/FAQ.astro'
+import Doctoralia from '../components/Doctoralia.astro'
+import Facebook from '../components/Facebook.astro'
+import Contact from '../components/Contact.astro'
+---
+
+<BaseLayout>
+	<Header />
+	<Hero class='reveal' />
+	<Services class='reveal' />
+	<About class='reveal' />
+	<Approach class='reveal' />
+	<Experience class='reveal' />
+	<FAQ class='reveal' />
+	<Doctoralia class='reveal' />
+	<Facebook class='reveal' />
+	<Contact class='reveal' />
+	<script is:inline>
+		const observer = new IntersectionObserver(
+			(entries) => {
+				entries.forEach((e) => {
+					if (e.isIntersecting) {
+						e.target.classList.add('is-visible')
+						observer.unobserve(e.target)
+					}
+				})
+			},
+			{ threshold: 0.15 }
+		)
+		document.querySelectorAll('main section').forEach((sec) => observer.observe(sec))
+	</script>
+</BaseLayout>
