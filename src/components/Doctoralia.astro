@@ -1,21 +1,31 @@
 ---
+import ElegantAnimation from './ElegantAnimation.tsx'
+import ElegantText from './ElegantText.tsx'
 const { class: cls = '' } = Astro.props
 ---
 
 <section id='doctoralia' class={`py-16 md:py-24 flex flex-col items-center px-6 ${cls}`}>
-	<h2 class='font-display tracking-tight text-3xl md:text-4xl font-semibold leading-snug text-center'>
-		Opiniones de pacientes
-	</h2>
-	<p class='mt-4 mb-6 max-w-2xl text-center text-lg text-inkSoft leading-relaxed'>
-		Transparencia y confianza: puedes consultar mi perfil y opiniones verificadas en Doctoralia.
-	</p>
-	<div id='doctoralia-container' class='mb-6 w-full flex justify-center'></div>
-	<a
-		class='inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-medium bg-white text-inkSoft border border-line hover:text-ink hover:shadow transition focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2'
-		href='https://www.doctoralia.es/anade-opinion/ma-angeles-contreras-penalver#/opinion'
-		target='_blank'
-		rel='noopener'>Dejar una opinión</a
-	>
+	<ElegantAnimation client:load type='fadeIn' delay={0.1}>
+		<h2 class='font-display tracking-tight text-3xl md:text-4xl font-semibold leading-snug text-center'>
+			Opiniones de pacientes
+		</h2>
+	</ElegantAnimation>
+	<ElegantAnimation client:load type='fadeIn' delay={0.2}>
+		<p class='mt-4 mb-6 max-w-2xl text-center text-lg text-inkSoft leading-relaxed'>
+			Transparencia y confianza: puedes consultar mi perfil y opiniones verificadas en Doctoralia.
+		</p>
+	</ElegantAnimation>
+	<ElegantAnimation client:load type='fadeIn' delay={0.3}>
+		<div id='doctoralia-container' class='mb-6 w-full flex justify-center'></div>
+	</ElegantAnimation>
+	<ElegantAnimation client:load type='fadeIn' delay={0.4}>
+		<a
+			class='inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-medium bg-white text-inkSoft border border-line hover:text-ink hover:shadow transition focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2'
+			href='https://www.doctoralia.es/anade-opinion/ma-angeles-contreras-penalver#/opinion'
+			target='_blank'
+			rel='noopener'>Dejar una opinión</a
+		>
+	</ElegantAnimation>
 </section>
 <script is:inline>
 	const html =

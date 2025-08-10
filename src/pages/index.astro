@@ -14,27 +14,13 @@ import Contact from '../components/Contact.astro'
 
 <BaseLayout>
 	<Header />
-	<Hero class='reveal' />
-	<Services class='reveal' />
-	<About class='reveal' />
-	<Approach class='reveal' />
-	<Experience class='reveal' />
-	<FAQ class='reveal' />
-	<Doctoralia class='reveal' />
-	<Facebook class='reveal' />
-	<Contact class='reveal' />
-	<script is:inline>
-		const observer = new IntersectionObserver(
-			(entries) => {
-				entries.forEach((e) => {
-					if (e.isIntersecting) {
-						e.target.classList.add('is-visible')
-						observer.unobserve(e.target)
-					}
-				})
-			},
-			{ threshold: 0.15 }
-		)
-		document.querySelectorAll('main section').forEach((sec) => observer.observe(sec))
-	</script>
+	<Hero class='elegant-section' />
+	<Services class='elegant-section' />
+	<About class='elegant-section' />
+	<Approach class='elegant-section' />
+	<Experience class='elegant-section' />
+	<FAQ class='elegant-section' />
+	<Doctoralia class='elegant-section' />
+	<Facebook class='elegant-section' />
+	<Contact class='elegant-section' />
 </BaseLayout>

@@ -1,5 +1,7 @@
 ---
 import { GraduationCap, Heart, Users } from 'lucide-react'
+import ElegantAnimation from './ElegantAnimation.tsx'
+import ElegantText from './ElegantText.tsx'
 const { class: cls = '' } = Astro.props
 ---
 
@@ -7,59 +9,79 @@ const { class: cls = '' } = Astro.props
 	<div class='max-w-6xl mx-auto px-6'>
 		<div class='grid lg:grid-cols-2 gap-16 items-center'>
 			<div>
-				<h2 class='font-display tracking-tight text-3xl md:text-4xl font-semibold leading-snug text-ink'>
-					Sobre mí
-				</h2>
-				<p class='mt-6 text-lg text-inkSoft leading-relaxed'>
-					Soy M. Ángeles Contreras, psicóloga sanitaria especializada en terapia sistémica. Mi pasión es acompañar a las personas en sus procesos de cambio, ayudándoles a descubrir sus propios recursos y fortalezas.
-				</p>
-				<p class='mt-4 text-lg text-inkSoft leading-relaxed'>
-					Creo firmemente en un enfoque colaborativo donde tú eres el experto en tu propia vida, y yo te acompaño proporcionando herramientas y perspectivas que te permitan avanzar hacia tus objetivos.
-				</p>
-				
+				<ElegantAnimation client:load type='fadeIn' delay={0.1}>
+					<h2 class='font-display tracking-tight text-3xl md:text-4xl font-semibold leading-snug text-ink'>Sobre mí</h2>
+				</ElegantAnimation>
+				<ElegantAnimation client:load type='fadeIn' delay={0.2}>
+					<p class='mt-6 text-lg text-inkSoft leading-relaxed'>
+						Soy M. Ángeles Contreras, psicóloga sanitaria especializada en terapia sistémica. Mi pasión es acompañar a
+						las personas en sus procesos de cambio, ayudándoles a descubrir sus propios recursos y fortalezas.
+					</p>
+				</ElegantAnimation>
+				<ElegantAnimation client:load type='fadeIn' delay={0.3}>
+					<p class='mt-4 text-lg text-inkSoft leading-relaxed'>
+						Creo firmemente en un enfoque colaborativo donde tú eres el experto en tu propia vida, y yo te acompaño
+						proporcionando herramientas y perspectivas que te permitan avanzar hacia tus objetivos.
+					</p>
+				</ElegantAnimation>
+
 				<div class='mt-8 grid gap-6'>
-					<div class='flex items-start gap-4'>
-						<div class='p-2 rounded-lg bg-accent/10'>
-							<GraduationCap className='h-5 w-5 text-accent' />
+					<ElegantAnimation client:load type='fadeIn' delay={0.4}>
+						<div class='flex items-start gap-4'>
+							<div class='p-2 rounded-lg bg-accent/10'>
+								<GraduationCap className='h-5 w-5 text-accent' />
+							</div>
+							<div>
+								<h3 class='font-semibold text-ink'>Formación especializada</h3>
+								<p class='text-sm text-inkSoft mt-1'>
+									Psicología sanitaria y terapia sistémica con formación continua en las últimas metodologías.
+								</p>
+							</div>
 						</div>
-						<div>
-							<h3 class='font-semibold text-ink'>Formación especializada</h3>
-							<p class='text-sm text-inkSoft mt-1'>Psicología sanitaria y terapia sistémica con formación continua en las últimas metodologías.</p>
+					</ElegantAnimation>
+
+					<ElegantAnimation client:load type='fadeIn' delay={0.5}>
+						<div class='flex items-start gap-4'>
+							<div class='p-2 rounded-lg bg-accent/10'>
+								<Heart className='h-5 w-5 text-accent' />
+							</div>
+							<div>
+								<h3 class='font-semibold text-ink'>Enfoque humano</h3>
+								<p class='text-sm text-inkSoft mt-1'>
+									Cada persona es única. Adapto mi metodología a tus necesidades específicas y ritmo personal.
+								</p>
+							</div>
 						</div>
-					</div>
-					
-					<div class='flex items-start gap-4'>
-						<div class='p-2 rounded-lg bg-accent/10'>
-							<Heart className='h-5 w-5 text-accent' />
+					</ElegantAnimation>
+
+					<ElegantAnimation client:load type='fadeIn' delay={0.6}>
+						<div class='flex items-start gap-4'>
+							<div class='p-2 rounded-lg bg-accent/10'>
+								<Users className='h-5 w-5 text-accent' />
+							</div>
+							<div>
+								<h3 class='font-semibold text-ink'>Experiencia diversa</h3>
+								<p class='text-sm text-inkSoft mt-1'>
+									He trabajado con personas de todas las edades y contextos, desde terapia individual hasta familiar.
+								</p>
+							</div>
 						</div>
-						<div>
-							<h3 class='font-semibold text-ink'>Enfoque humano</h3>
-							<p class='text-sm text-inkSoft mt-1'>Cada persona es única. Adapto mi metodología a tus necesidades específicas y ritmo personal.</p>
-						</div>
-					</div>
-					
-					<div class='flex items-start gap-4'>
-						<div class='p-2 rounded-lg bg-accent/10'>
-							<Users className='h-5 w-5 text-accent' />
-						</div>
-						<div>
-							<h3 class='font-semibold text-ink'>Experiencia diversa</h3>
-							<p class='text-sm text-inkSoft mt-1'>He trabajado con personas de todas las edades y contextos, desde terapia individual hasta familiar.</p>
-						</div>
-					</div>
+					</ElegantAnimation>
 				</div>
 			</div>
-			
+
 			<div class='relative'>
-				<div class='absolute -inset-4 rounded-3xl bg-accent/5 blur-xl'></div>
-				<div class='relative rounded-2xl overflow-hidden shadow-card'>
-					<img
-						src='/img/maria-contreras-psicologa-contact-2.webp'
-						alt='M. Ángeles Contreras en consulta'
-						loading='lazy'
-						class='w-full h-full object-cover'
-					/>
-				</div>
+				<ElegantAnimation client:load type='scaleIn' delay={0.2}>
+					<div class='absolute -inset-4 rounded-3xl bg-accent/5 blur-xl'></div>
+					<div class='relative rounded-2xl overflow-hidden shadow-card'>
+						<img
+							src='/img/maria-contreras-psicologa-contact-2.webp'
+							alt='M. Ángeles Contreras en consulta'
+							loading='lazy'
+							class='w-full h-full object-cover'
+						/>
+					</div>
+				</ElegantAnimation>
 			</div>
 		</div>
 	</div>

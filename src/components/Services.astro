@@ -1,5 +1,7 @@
 ---
 import { HeartHandshake, Users2, UserRound, Rainbow } from 'lucide-react'
+import ElegantAnimation from './ElegantAnimation.tsx'
+import ElegantText from './ElegantText.tsx'
 const serviceList = [
 	{
 		name: 'Espacio seguro LGTBIQ',
@@ -31,28 +33,34 @@ const { class: cls = '' } = Astro.props
 
 <section id='servicios' class={`py-8 md:py-24 ${cls}`}>
 	<div class='text-center max-w-3xl mx-auto px-6'>
-		<h2 class='font-display tracking-tight text-3xl md:text-4xl font-semibold leading-snug'>Áreas de intervención</h2>
-		<p class='mt-4 text-lg md:text-xl text-inkSoft leading-relaxed'>
-			Un enfoque humano y cercano para distintos momentos y necesidades vitales. Elige la modalidad que mejor se adapta
-			a ti.
-		</p>
+		<ElegantAnimation client:load type='fadeIn' delay={0.1}>
+			<h2 class='font-display tracking-tight text-3xl md:text-4xl font-semibold leading-snug'>Áreas de intervención</h2>
+		</ElegantAnimation>
+		<ElegantAnimation client:load type='fadeIn' delay={0.2}>
+			<p class='mt-4 text-lg md:text-xl text-inkSoft leading-relaxed'>
+				Un enfoque humano y cercano para distintos momentos y necesidades vitales. Elige la modalidad que mejor se
+				adapta a ti.
+			</p>
+		</ElegantAnimation>
 	</div>
 	<div class='mt-16 grid gap-10 sm:grid-cols-2 lg:grid-cols-4 px-6 max-w-6xl mx-auto'>
 		{
-			serviceList.map((s) => {
+			serviceList.map((s, index) => {
 				const Icon = s.icon
 				return (
-					<article class='bg-white rounded-2xl shadow-card border border-line/60 p-5 flex flex-col'>
-						<div class='relative'>
-							<img class='w-full h-48 object-cover rounded-xl mb-5' src={s.img} alt={s.name} loading='lazy' />
-							<span class='absolute top-3 left-3 inline-flex items-center gap-1 text-[11px] font-medium px-2 py-1 rounded-md bg-accentSoft text-accent'>
-								<Icon className='h-4 w-4' />
-								{s.name}
-							</span>
-						</div>
-						<h3 class='mt-2 text-lg font-semibold text-ink'>{s.name}</h3>
-						<p class='mt-1 text-sm text-inkSoft leading-relaxed'>{s.desc}</p>
-					</article>
+					<ElegantAnimation client:load type='fadeIn' delay={0.3 + index * 0.1}>
+						<article class='bg-white rounded-2xl shadow-card border border-line/60 p-5 flex flex-col'>
+							<div class='relative'>
+								<img class='w-full h-48 object-cover rounded-xl mb-5' src={s.img} alt={s.name} loading='lazy' />
+								<span class='absolute top-3 left-3 inline-flex items-center gap-1 text-[11px] font-medium px-2 py-1 rounded-md bg-accentSoft text-accent'>
+									<Icon className='h-4 w-4' />
+									{s.name}
+								</span>
+							</div>
+							<h3 class='mt-2 text-lg font-semibold text-ink'>{s.name}</h3>
+							<p class='mt-1 text-sm text-inkSoft leading-relaxed'>{s.desc}</p>
+						</article>
+					</ElegantAnimation>
 				)
 			})
 		}

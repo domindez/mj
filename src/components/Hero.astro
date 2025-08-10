@@ -1,41 +1,53 @@
 ---
+import ElegantAnimation from './ElegantAnimation.tsx'
+import ElegantText from './ElegantText.tsx'
 const { class: cls = '' } = Astro.props
 ---
 
 <section class={`pt-20 pb-16 md:pb-24 ${cls}`}>
 	<div class='max-w-6xl mx-auto grid lg:grid-cols-2 gap-20 items-center px-6'>
 		<div class='lg:order-1'>
-			<h1 class='font-display tracking-tight text-4xl md:text-5xl font-semibold leading-tight'>
-				Psicóloga sanitaria, experta en terapia sistémica.
-			</h1>
-			<p class='mt-6 text-lg md:text-xl text-inkSoft leading-relaxed'>
-				Trabajo contigo desde un enfoque sistémico y colaborativo para ayudarte a clarificar objetivos, desbloquearte y
-				avanzar con herramientas adaptadas a tu contexto. Sesiones online o presenciales en Málaga.
-			</p>
-			<p class='text-right mt-2 mb-6 text-2xl text-inkSoft' style='font-family: "Dancing Script", cursive;'>
-				M. Ángeles Contreras
-			</p>
-			<div class='flex flex-wrap gap-4 mt-10'>
-				<a
-					href='#contacto'
-					class='inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-medium bg-accent text-white hover:bg-teal-600 transition shadow-sm focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2'
-					>Solicitar primera cita</a
-				>
-				<a
-					href='#servicios'
-					class='inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-medium bg-white text-inkSoft border border-line hover:text-ink hover:shadow transition focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2'
-					>Ver servicios</a
-				>
-			</div>
+			<ElegantText client:load delay={0.2}>
+				<h1 class='font-display tracking-tight text-4xl md:text-5xl font-semibold leading-tight'>
+					Psicóloga sanitaria, experta en terapia sistémica.
+				</h1>
+			</ElegantText>
+			<ElegantAnimation client:load type='slideUp' delay={0.3}>
+				<p class='mt-6 text-lg md:text-xl text-inkSoft leading-relaxed'>
+					Trabajo contigo desde un enfoque sistémico y colaborativo para ayudarte a clarificar objetivos, desbloquearte
+					y avanzar con herramientas adaptadas a tu contexto. Sesiones online o presenciales en Málaga.
+				</p>
+			</ElegantAnimation>
+			<ElegantAnimation client:load type='fadeIn' delay={0.4}>
+				<p class='text-right mt-2 mb-6 text-2xl text-inkSoft' style='font-family: "Dancing Script", cursive;'>
+					M. Ángeles Contreras
+				</p>
+			</ElegantAnimation>
+			<ElegantAnimation client:load type='slideUp' delay={0.5}>
+				<div class='flex flex-wrap gap-4 mt-10'>
+					<a
+						href='#contacto'
+						class='inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-medium bg-accent text-white hover:bg-teal-600 transition shadow-sm focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2'
+						>Solicitar primera cita</a
+					>
+					<a
+						href='#servicios'
+						class='inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-medium bg-white text-inkSoft border border-line hover:text-ink hover:shadow transition focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2'
+						>Ver servicios</a
+					>
+				</div>
+			</ElegantAnimation>
 		</div>
 		<div class='relative lg:order-2 order-first'>
-			<div class='absolute -inset-4 rounded-3xl bg-accentSoft blur-2xl opacity-60'></div>
-			<img
-				src='/img/maria-contreras-psicologa.webp'
-				alt='M. Ángeles Contreras psicóloga'
-				loading='lazy'
-				class='relative rounded-2xl shadow-card border border-line/70'
-			/>
+			<ElegantAnimation client:load type='scaleIn' delay={0.3}>
+				<div class='absolute -inset-4 rounded-3xl bg-accentSoft blur-2xl opacity-60'></div>
+				<img
+					src='/img/maria-contreras-psicologa.webp'
+					alt='M. Ángeles Contreras psicóloga'
+					loading='lazy'
+					class='relative rounded-2xl shadow-card border border-line/70'
+				/>
+			</ElegantAnimation>
 		</div>
 	</div>
 </section>

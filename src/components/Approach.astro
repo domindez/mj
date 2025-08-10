@@ -1,91 +1,105 @@
 ---
 import { Target, Lightbulb, ArrowRight, CheckCircle } from 'lucide-react'
+import ElegantAnimation from './ElegantAnimation.tsx'
+import ElegantText from './ElegantText.tsx'
 const { class: cls = '' } = Astro.props
 ---
 
 <section id='enfoque' class={`py-16 md:py-24 bg-baseAlt/20 ${cls}`}>
 	<div class='max-w-6xl mx-auto px-6'>
 		<div class='text-center mb-16'>
-			<h2 class='font-display tracking-tight text-3xl md:text-4xl font-semibold leading-snug text-ink'>
-				Mi enfoque terapéutico
-			</h2>
-			<p class='mt-4 text-lg text-inkSoft leading-relaxed max-w-3xl mx-auto'>
-				Trabajo desde la terapia sistémica centrada en soluciones, un enfoque que pone el foco en tus fortalezas y
-				recursos para construir el cambio que deseas.
-			</p>
+			<ElegantAnimation client:load type='fadeIn' delay={0.1}>
+				<h2 class='font-display tracking-tight text-3xl md:text-4xl font-semibold leading-snug text-ink'>
+					Mi enfoque terapéutico
+				</h2>
+			</ElegantAnimation>
+			<ElegantAnimation client:load type='fadeIn' delay={0.2}>
+				<p class='mt-4 text-lg text-inkSoft leading-relaxed max-w-3xl mx-auto'>
+					Trabajo desde la terapia sistémica centrada en soluciones, un enfoque que pone el foco en tus fortalezas y
+					recursos para construir el cambio que deseas.
+				</p>
+			</ElegantAnimation>
 		</div>
 
 		<div class='grid md:grid-cols-2 gap-12 mb-16'>
 			<div class='space-y-8'>
-				<div class='flex items-start gap-4'>
-					<div class='p-3 rounded-xl bg-accent text-white'>
-						<Target className='h-6 w-6' />
+				<ElegantAnimation client:load type='fadeIn' delay={0.3}>
+					<div class='flex items-start gap-4'>
+						<div class='p-3 rounded-xl bg-accent text-white'>
+							<Target className='h-6 w-6' />
+						</div>
+						<div>
+							<h3 class='text-xl font-semibold text-ink mb-2'>Centrado en objetivos</h3>
+							<p class='text-inkSoft leading-relaxed'>
+								Nos enfocamos en lo que quieres conseguir, no solo en los problemas. Definimos metas claras y trabajamos
+								paso a paso para alcanzarlas.
+							</p>
+						</div>
 					</div>
-					<div>
-						<h3 class='text-xl font-semibold text-ink mb-2'>Centrado en objetivos</h3>
-						<p class='text-inkSoft leading-relaxed'>
-							Nos enfocamos en lo que quieres conseguir, no solo en los problemas. Definimos metas claras y trabajamos
-							paso a paso para alcanzarlas.
-						</p>
-					</div>
-				</div>
+				</ElegantAnimation>
 
-				<div class='flex items-start gap-4'>
-					<div class='p-3 rounded-xl bg-accent text-white'>
-						<Lightbulb className='h-6 w-6' />
+				<ElegantAnimation client:load type='fadeIn' delay={0.4}>
+					<div class='flex items-start gap-4'>
+						<div class='p-3 rounded-xl bg-accent text-white'>
+							<Lightbulb className='h-6 w-6' />
+						</div>
+						<div>
+							<h3 class='text-xl font-semibold text-ink mb-2'>Orientado a recursos</h3>
+							<p class='text-inkSoft leading-relaxed'>
+								Identificamos y potenciamos tus fortalezas existentes. Tienes más recursos de los que crees para
+								afrontar los desafíos.
+							</p>
+						</div>
 					</div>
-					<div>
-						<h3 class='text-xl font-semibold text-ink mb-2'>Orientado a recursos</h3>
-						<p class='text-inkSoft leading-relaxed'>
-							Identificamos y potenciamos tus fortalezas existentes. Tienes más recursos de los que crees para afrontar
-							los desafíos.
-						</p>
-					</div>
-				</div>
+				</ElegantAnimation>
 			</div>
 
 			<div class='relative'>
-				<div class='bg-white rounded-2xl p-8 shadow-card border border-line/30'>
-					<h4 class='font-display text-lg font-semibold text-ink mb-6'>¿Cómo trabajamos?</h4>
-					<div class='space-y-4'>
-						<div class='flex items-center gap-3'>
-							<CheckCircle className='h-5 w-5 text-accent flex-shrink-0' />
-							<span class='text-sm text-inkSoft'>Evaluación colaborativa de la situación actual</span>
-						</div>
-						<div class='flex items-center gap-3'>
-							<CheckCircle className='h-5 w-5 text-accent flex-shrink-0' />
-							<span class='text-sm text-inkSoft'>Definición clara de objetivos terapéuticos</span>
-						</div>
-						<div class='flex items-center gap-3'>
-							<CheckCircle className='h-5 w-5 text-accent flex-shrink-0' />
-							<span class='text-sm text-inkSoft'>Exploración de recursos y fortalezas</span>
-						</div>
-						<div class='flex items-center gap-3'>
-							<CheckCircle className='h-5 w-5 text-accent flex-shrink-0' />
-							<span class='text-sm text-inkSoft'>Diseño de estrategias personalizadas</span>
-						</div>
-						<div class='flex items-center gap-3'>
-							<CheckCircle className='h-5 w-5 text-accent flex-shrink-0' />
-							<span class='text-sm text-inkSoft'>Seguimiento y ajuste continuo del proceso</span>
+				<ElegantAnimation client:load type='fadeIn' delay={0.3}>
+					<div class='bg-white rounded-2xl p-8 shadow-card border border-line/30'>
+						<h4 class='font-display text-lg font-semibold text-ink mb-6'>¿Cómo trabajamos?</h4>
+						<div class='space-y-4'>
+							<div class='flex items-center gap-3'>
+								<CheckCircle className='h-5 w-5 text-accent flex-shrink-0' />
+								<span class='text-sm text-inkSoft'>Evaluación colaborativa de la situación actual</span>
+							</div>
+							<div class='flex items-center gap-3'>
+								<CheckCircle className='h-5 w-5 text-accent flex-shrink-0' />
+								<span class='text-sm text-inkSoft'>Definición clara de objetivos terapéuticos</span>
+							</div>
+							<div class='flex items-center gap-3'>
+								<CheckCircle className='h-5 w-5 text-accent flex-shrink-0' />
+								<span class='text-sm text-inkSoft'>Exploración de recursos y fortalezas</span>
+							</div>
+							<div class='flex items-center gap-3'>
+								<CheckCircle className='h-5 w-5 text-accent flex-shrink-0' />
+								<span class='text-sm text-inkSoft'>Diseño de estrategias personalizadas</span>
+							</div>
+							<div class='flex items-center gap-3'>
+								<CheckCircle className='h-5 w-5 text-accent flex-shrink-0' />
+								<span class='text-sm text-inkSoft'>Seguimiento y ajuste continuo del proceso</span>
+							</div>
 						</div>
 					</div>
-				</div>
+				</ElegantAnimation>
 			</div>
 		</div>
 
-		<div class='bg-gradient-to-r from-accent/5 to-accentAlt/5 rounded-2xl p-8 md:p-12 text-center'>
-			<h3 class='font-display text-2xl font-semibold text-ink mb-4'>¿Listo para empezar tu proceso de cambio?</h3>
-			<p class='text-inkSoft mb-8 max-w-2xl mx-auto'>
-				El primer paso es siempre el más importante. Te acompaño desde el primer momento para que te sientas cómodo y
-				seguro en este proceso.
-			</p>
-			<a
-				href='#contacto'
-				class='inline-flex items-center gap-2 rounded-full px-8 py-4 text-sm font-medium bg-accent text-white hover:bg-teal-600 transition shadow-sm focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2'
-			>
-				Solicitar primera consulta
-				<ArrowRight className='h-4 w-4' />
-			</a>
-		</div>
+		<ElegantAnimation client:load type='fadeIn' delay={0.5}>
+			<div class='bg-gradient-to-r from-accent/5 to-accentAlt/5 rounded-2xl p-8 md:p-12 text-center'>
+				<h3 class='font-display text-2xl font-semibold text-ink mb-4'>¿Listo para empezar tu proceso de cambio?</h3>
+				<p class='text-inkSoft mb-8 max-w-2xl mx-auto'>
+					El primer paso es siempre el más importante. Te acompaño desde el primer momento para que te sientas cómodo y
+					seguro en este proceso.
+				</p>
+				<a
+					href='#contacto'
+					class='inline-flex items-center gap-2 rounded-full px-8 py-4 text-sm font-medium bg-accent text-white hover:bg-teal-600 transition shadow-sm focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2'
+				>
+					Solicitar primera consulta
+					<ArrowRight className='h-4 w-4' />
+				</a>
+			</div>
+		</ElegantAnimation>
 	</div>
 </section>

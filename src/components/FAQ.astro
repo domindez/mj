@@ -1,5 +1,7 @@
 ---
 import { ChevronDown } from 'lucide-react'
+import ElegantAnimation from './ElegantAnimation.tsx'
+import ElegantText from './ElegantText.tsx'
 const { class: cls = '' } = Astro.props
 
 const faqs = [
@@ -39,29 +41,35 @@ const faqs = [
 <section id='preguntas' class={`py-16 md:py-24 ${cls}`}>
 	<div class='max-w-4xl mx-auto px-6'>
 		<div class='text-center mb-16'>
-			<h2 class='font-display tracking-tight text-3xl md:text-4xl font-semibold leading-snug text-ink'>
-				Preguntas frecuentes
-			</h2>
-			<p class='mt-4 text-lg text-inkSoft leading-relaxed'>
-				Resuelvo las dudas más comunes sobre el proceso terapéutico
-			</p>
+			<ElegantAnimation client:load type='fadeIn' delay={0.1}>
+				<h2 class='font-display tracking-tight text-3xl md:text-4xl font-semibold leading-snug text-ink'>
+					Preguntas frecuentes
+				</h2>
+			</ElegantAnimation>
+			<ElegantAnimation client:load type='fadeIn' delay={0.2}>
+				<p class='mt-4 text-lg text-inkSoft leading-relaxed'>
+					Resuelvo las dudas más comunes sobre el proceso terapéutico
+				</p>
+			</ElegantAnimation>
 		</div>
 
 		<div class='space-y-4'>
 			{
 				faqs.map((faq, index) => (
-					<div class='bg-white rounded-xl border border-line/30 shadow-sm overflow-hidden'>
-						<button
-							class='faq-button w-full px-6 py-5 text-left flex items-center justify-between hover:bg-baseAlt/30 transition-colors'
-							data-faq={index}
-						>
-							<span class='font-medium text-ink pr-4'>{faq.question}</span>
-							<ChevronDown className='h-5 w-5 text-inkSoft transform transition-transform faq-icon' />
-						</button>
-						<div class='faq-content hidden px-6 pb-5'>
-							<p class='text-inkSoft leading-relaxed'>{faq.answer}</p>
+					<ElegantAnimation client:load type='fadeIn' delay={0.3 + index * 0.05}>
+						<div class='bg-white rounded-xl border border-line/30 shadow-sm overflow-hidden'>
+							<button
+								class='faq-button w-full px-6 py-5 text-left flex items-center justify-between hover:bg-baseAlt/30 transition-colors'
+								data-faq={index}
+							>
+								<span class='font-medium text-ink pr-4'>{faq.question}</span>
+								<ChevronDown className='h-5 w-5 text-inkSoft transform transition-transform faq-icon' />
+							</button>
+							<div class='faq-content hidden px-6 pb-5'>
+								<p class='text-inkSoft leading-relaxed'>{faq.answer}</p>
+							</div>
 						</div>
-					</div>
+					</ElegantAnimation>
 				))
 			}
 		</div>

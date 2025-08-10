@@ -1,23 +1,31 @@
 ---
+import ElegantAnimation from './ElegantAnimation.tsx'
+import ElegantText from './ElegantText.tsx'
 const companies = ['atrio', 'engloba', 'uma', 'acude']
 const { class: cls = '' } = Astro.props
 ---
 
 <section id='experiencia' class={`py-16 md:py-24 ${cls}`}>
 	<div class='text-center max-w-3xl mx-auto px-6 mb-10'>
-		<h2 class='font-display tracking-tight text-3xl md:text-4xl font-semibold leading-snug'>
-			Experiencia y colaboración
-		</h2>
-		<p class='mt-4 text-lg md:text-xl text-inkSoft leading-relaxed'>
-			He colaborado con entidades y centros con una visión ética y basada en la evidencia.
-		</p>
+		<ElegantAnimation client:load type='fadeIn' delay={0.1}>
+			<h2 class='font-display tracking-tight text-3xl md:text-4xl font-semibold leading-snug'>
+				Experiencia y colaboración
+			</h2>
+		</ElegantAnimation>
+		<ElegantAnimation client:load type='fadeIn' delay={0.2}>
+			<p class='mt-4 text-lg md:text-xl text-inkSoft leading-relaxed'>
+				He colaborado con entidades y centros con una visión ética y basada en la evidencia.
+			</p>
+		</ElegantAnimation>
 	</div>
 	<div class='flex flex-wrap justify-center gap-10 items-center mt-12 px-6'>
 		{
-			companies.map((c) => (
-				<div class='p-4 rounded-xl bg-white border border-line/60 shadow-card hover:shadow-md transition'>
-					<img class='h-14 w-auto object-contain' src={`/img/logo-${c}.png`} alt={`logo de ${c}`} loading='lazy' />
-				</div>
+			companies.map((c, index) => (
+				<ElegantAnimation client:load type='fadeIn' delay={0.3 + index * 0.1}>
+					<div class='p-4 rounded-xl bg-white border border-line/60 shadow-card hover:shadow-md transition'>
+						<img class='h-14 w-auto object-contain' src={`/img/logo-${c}.png`} alt={`logo de ${c}`} loading='lazy' />
+					</div>
+				</ElegantAnimation>
 			))
 		}
 	</div>
